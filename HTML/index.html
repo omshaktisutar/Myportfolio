@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OM SHAKTI SUTAR | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/CSS/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <style>
+  /* Responsive adjustments for all devices */
+  @media (max-width: 1200px) {
+    .hero {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 2rem;
+      padding: 2.5rem 3vw 1.5rem 3vw;
+    }
+    .hero-img img {
+      width: 160px;
+      height: 160px;
+    }
+    .section {
+      padding: 2.5rem 2vw 1.5rem 2vw;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .navbar {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem 2vw;
+    }
+    .hero-text h2 {
+      font-size: 2rem;
+    }
+    .section-title {
+      font-size: 1.3rem;
+    }
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .footer-content {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .navbar {
+      flex-direction: column;
+      gap: 0.7rem;
+      padding: 0.7rem 2vw;
+    }
+    .logo {
+      font-size: 1.3rem;
+    }
+    .navbar nav {
+      gap: 1.2rem;
+    }
+    .hero {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 1.2rem;
+      padding: 1.2rem 2vw 0.7rem 2vw;
+    }
+    .hero-img img {
+      width: 110px;
+      height: 110px;
+    }
+    .hero-text h2 {
+      font-size: 1.2rem;
+    }
+    .hero-text p {
+      font-size: 0.98rem;
+    }
+    .section {
+      padding: 1.2rem 1vw 0.8rem 1vw;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 0.7rem;
+    }
+    .card, .project-card {
+      padding: 0.7rem 0.8rem;
+      font-size: 0.98rem;
+    }
+    .skills-marquee-container {
+      margin-bottom: 1rem;
+    }
+    .skill-card {
+      min-width: 80px;
+      padding: 0.6rem 0.7rem;
+      font-size: 0.9rem;
+    }
+    .skill-card img {
+      width: 28px;
+      height: 28px;
+    }
+    .contact-form {
+      gap: 0.7rem;
+      max-width: 98vw;
+      padding: 0 2vw;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 0.6rem 0.7rem;
+      font-size: 0.95rem;
+    }
+    .contact-form button {
+      font-size: 0.95rem;
+      padding: 0.6rem 1.2rem;
+    }
+    footer {
+      padding: 1rem 0 0.5rem 0;
+      font-size: 0.95rem;
+      border-radius: 14px 14px 0 0;
+      margin-top: 1rem;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .logo {
+      font-size: 1rem;
+    }
+    .hero-img img {
+      width: 80px;
+      height: 80px;
+    }
+    .section-title {
+      font-size: 0.95rem;
+    }
+    .footer-content {
+      font-size: 0.85rem;
+    }
+  }
+  </style>
+<style>
+body.dark {
+  background: linear-gradient(135deg, #181c24 0%, #23272f 100%);
+  color: #e6e6e6;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(30,34,44,0.98);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 1.2rem 3vw;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: #00e6d2;
+  text-shadow: 0 2px 8px #00e6d233;
+}
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+}
+.navbar nav a {
+  color: #e6e6e6;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.08rem;
+  transition: color 0.2s;
+  position: relative;
+}
+.navbar nav a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #00e6d2;
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+}
+.navbar nav a:hover {
+  color: #00e6d2;
+}
+.navbar nav a:hover::after {
+  width: 100%;
+}
+#themeToggle {
+  background: #23272f;
+  color: #00e6d2;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  padding: 0.5rem 0.7rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-left: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+#themeToggle:hover {
+  background: #00e6d2;
+  color: #23272f;
+}
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3vw;
+  padding: 4rem 3vw 2rem 3vw;
+  background: linear-gradient(120deg, #1e222c 60%, #23272f 100%);
+  border-radius: 0 0 32px 32px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+}
+.hero-text {
+  max-width: 600px;
+}
+.hero-text h3 {
+  color: #00e6d2;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+.hero-text h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: #fff;
+  text-shadow: 0 2px 12px #00e6d233;
+}
+.hero-text p {
+  font-size: 1.13rem;
+  color: #bfc9d1;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+.hero-buttons {
+  display: flex;
+  gap: 1.2rem;
+}
+.btn-outline, .btn-fill {
+  padding: 0.7rem 2.1rem;
+  border-radius: 8px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  border: 2px solid #00e6d2;
+}
+.btn-outline {
+  background: transparent;
+  color: #00e6d2;
+}
+.btn-outline:hover {
+  background: #00e6d2;
+  color: #23272f;
+}
+.btn-fill {
+  background: #00e6d2;
+  color: #23272f;
+  border: 2px solid #00e6d2;
+}
+.btn-fill:hover {
+  background: #23272f;
+  color: #00e6d2;
+}
+.hero-img img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid #00e6d2;
+  box-shadow: 0 4px 32px #00e6d244;
+  background: #23272f;
+}
+.section {
+  padding: 3.5rem 3vw 2.5rem 3vw;
+  margin-top: 2rem;
+  background: rgba(30,34,44,0.92);
+  border-radius: 24px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+  margin-bottom: 2rem;
+}
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #00e6d2;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #00e6d233;
+}
+.section-text {
+  color: #bfc9d1;
+  font-size: 1.13rem;
+  line-height: 1.7;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.7rem;
+  margin-top: 1.5rem;
+}
+.card, .project-card {
+  background: #23272f;
+  border-radius: 14px;
+  padding: 1.2rem 1.5rem;
+  color: #e6e6e6;
+  font-size: 1.08rem;
+  font-weight: 500;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  transition: transform 0.18s, box-shadow 0.18s;
+  border: 1.5px solid #23272f;
+}
+.card:hover, .project-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 6px 24px #00e6d244;
+  border: 1.5px solid #00e6d2;
+}
+.project-card h3 {
+  color: #00e6d2;
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.project-card p {
+  color: #bfc9d1;
+  font-size: 1rem;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 420px;
+  margin: 0 auto;
+}
+.contact-form input, .contact-form textarea {
+  background: #181c24;
+  border: 1.5px solid #23272f;
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  color: #e6e6e6;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border 0.2s, box-shadow 0.2s;
+  resize: none;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+  border: 1.5px solid #00e6d2;
+  outline: none;
+  box-shadow: 0 2px 8px #00e6d244;
+}
+.contact-form button {
+  align-self: flex-end;
+}
+footer {
+  background: #181c24;
+  color: #bfc9d1;
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+  font-size: 1rem;
+  border-radius: 24px 24px 0 0;
+  margin-top: 2rem;
+  box-shadow: 0 -2px 16px rgba(0,0,0,0.10);
+}
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+.footer-divider {
+  color: #00e6d2;
+  font-weight: 700;
+}
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2.5rem 3vw 1.5rem 3vw;
+  }
+  .hero-img img {
+    width: 160px;
+    height: 160px;
+  }
+}
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 2vw;
+  }
+  .hero-text h2 {
+    font-size: 2rem;
+  }
+  .section {
+    padding: 2rem 2vw 1.5rem 2vw;
+  }
+  .section-title {
+    font-size: 1.3rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .footer-content {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+::-webkit-scrollbar {
+  width: 8px;
+  background: #23272f;
+}
+::-webkit-scrollbar-thumb {
+  background: #00e6d2;
+  border-radius: 8px;
+}
+</style>
+
+  <!-- NAVBAR -->
+   
+  <header class="navbar">
+  <h1 class="logo"></h1>
+
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button id="themeToggle">🌙</button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+   
+  <section class="hero">
+    <div class="hero-text">
+      <h3>JAVA FULLSTACK DEVELOPER(SpringBoot♨️)</h3>
+      <H3>MERN STACK DEVELOPER(React.JS🍁)</H3>
+      <h2>OM SHAKTI SUTAR</h2>
+      <p>
+       Readable code is easier to maintain than clever code is to debug.
+
+Code should be written for humans first, computers second.
+
+Simplicity in code reduces the cost of debugging and maintenance.
+
+The true skill of a programmer is writing code that is easy to fix, not hard to understand.
+      </p>
+      <div class="hero-buttons">
+
+      <a 
+  class="btn-outline" 
+  href="/assects/Om_Shakti_Sutar_Resume.pdf" 
+  download="Om_Shakti_Sutar_Resume"
+>
+  Download CV
+</a>
+
+        <a class="btn-fill" href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="/assects/1760026394348 (1).jpg" alt="profile" />
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2 class="section-title">Why Me.?</h2>
+    <p class="section-text">
+  I'm a passionate Full Stack Developer with expertise in Java, Python, Spring Boot, HTML, CSS, JavaScript, and SQL. I recently completed my MCA and am currently sharpening my skills with hands-on projects at KodNest, Bangalore.
+
+I love building real-world applications and learning new technologies. I'm actively looking for full-time opportunities where I can contribute and grow in a fast-paced tech environment.
+
+Tech Skills: Java, Python, Spring Boot, SQL, HTML, CSS, JavaScript, React, Git
+
+Let’s connect!
+    </p>
+  </section>
+  <!-- Education -->
+  <section id="education" class="section">
+    <h2 class="section-title">Education</h2>
+    <div class="grid">
+      <div class="project-card">
+        <h3>MCA - Master of Computer Applications</h3>
+        <p>MSCB UNIVERSITY</p>
+        <span>2025</span>
+      </div>
+      <div class="project-card">
+        <h3>BSE - Bachelor of Science</h3>
+        <p>UTKAL UNIVERSITY</p>
+        <span>Year of Graduation-2022</span>
+      </div>
+      <div class="project-card">
+        <h3>Secondary Board🔬</h3>
+        <p>CHSE,Odisha</p>
+        <span>Year of Completion-2019</span>
+      </div>
+      <div class="project-card">
+        <h3>School🏫🎒</h3>
+        <p>BSE,Odisha</p>
+        <span>Year of Completion-2017</span>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- SKILLS -->
+   
+  <style>
+  .skills-marquee-container {
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 2rem;
+    background: transparent;
+  }
+  .skills-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 18s linear infinite;
+    gap: 1.5rem;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #23272f;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    min-width: 110px;
+    margin: 0 0.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    color: #fff;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: transform 0.2s;
+  }
+  .skill-card img {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 0.5rem;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+  }
+  </style>
+  <div class="skills-marquee-container">
+    <div class="skills-marquee-track">
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"/><span>HTML</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"/><span>CSS</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"/><span>JavaScript</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"/><span>React</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"/><span>Python</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"/><span>MySQL</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"/><span>Java</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"/><span>MongoDB</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"/><span>PostgreSQL</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"/><span>Git</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="SpringBoot"/><span>SpringBoot</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django"/><span>Django</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"/><span>TypeScript</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"/><span>Node.js</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C"/><span>C</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"/><span>C++</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"/><span>Bootstrap</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind CSS"/><span>Tailwind CSS</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma"/><span>Figma</span></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"/><span>HTML</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"/><span>CSS</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"/><span>JavaScript</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"/><span>React</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"/><span>Python</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"/><span>MySQL</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"/><span>Java</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"/><span>MongoDB</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"/><span>PostgreSQL</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"/><span>Git</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="SpringBoot"/><span>SpringBoot</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django"/><span>Django</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"/><span>TypeScript</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"/><span>Node.js</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C"/><span>C</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"/><span>C++</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"/><span>Bootstrap</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind CSS"/><span>Tailwind CSS</span></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma"/><span>Figma</span></div>
+    </div>
+  </div>
+
+  <section id="skills" class="section">
+    <h2 class="section-title">Skills</h2>
+    <div class="grid">
+      <div class="card">HTML</div>
+      <div class="card">CSS</div>
+      <div class="card">JavaScript</div>
+      <div class="card">React</div>
+      <div class="card">Python</div>
+      <div class="card">MySQL</div>
+      <div class="card">Java</div>
+      <div class="card">MongoDB</div>
+      <div class="card">PostgreSQL</div>
+      <div class="card">Git</div>
+      <div class="card">SpringBoot</div>
+      <div class="card">Django</div>
+      <div class="card">typeScript</div>
+      <div class="card">node.js</div>
+      <div class="card">C</div>
+      <div class="card">C++</div>
+      <div class="card">BootStrap</div>
+      <div class="card">TailWind CSS</div>
+      <div class="card">Figma</div>
+      <div class="card">Express.JS</div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <h2 class="section-title">Projects</h2>
+    <div class="grid">
+      <div class="project-card">
+        <h3>Library Management System📚</h3>
+        <p>Web app for managing books and users.</p>
+      </div>
+      <div class="project-card">
+        <h3>Weather Portal⛅</h3>
+        <p>Live weather data using API.</p>
+      </div>
+      <div class="project-card">
+        <h3>BusGO🚌🚐</h3>
+        <p>Real-time bus tracking system.</p>
+    </div>
+     <div class="project-card">
+        <h3>Stickerly💖👌</h3>
+        <p>Sticker creation and sharing platform.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+   
+  <section id="contact" class="section">
+    <h2 class="section-title">Contact</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Name" required />
+      <input type="email" placeholder="Email" required />
+      <textarea placeholder="Message"></textarea>
+      <button class="btn-fill">Send Message</button>
+      <div style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem;">
+        <a href="https://www.linkedin.com/in/om-shakti-sutar-69a517251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" style="width:36px; height:36px;" />
+        </a>
+        <a href="https://github.com/omshaktisutar" target="_blank" rel="noopener">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" style="width:36px; height:36px;" />
+        </a>
+        <a href="https://www.facebook.com/share/1bjHtPH5cg/" target="_blank" rel="noopener">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" style="width:36px; height:36px;" />
+        </a>
+        <a href="https://www.instagram.com/ommshaktisutar/" target="_blank" rel="noopener">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" style="width:36px; height:36px;" />
+        </a>
+      </div>
+    </form>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <span>&copy; 2026 OM SHAKTI SUTAR. All rights reserved.</span>
+      <span class="footer-divider">|</span>
+      <span>Made with <span style="color:#e25555;">&#10084;</span> by OMM</span>
+    </div>
+    created in Bangalore💕
+  </footer>
+
+  <script src="/JS/script.js"></script>
+</body>
+</html>
